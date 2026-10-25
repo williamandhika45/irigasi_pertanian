@@ -125,7 +125,7 @@ def server_error(e):
     if isinstance(e, HTTPException):
         return jsonify({"error": e.description}), e.code
     app.logger.exception(e)
-        return jsonify({"error": str(e)}), 500
+    return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
